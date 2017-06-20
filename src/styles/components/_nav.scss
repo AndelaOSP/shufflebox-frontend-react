@@ -1,0 +1,38 @@
+.nav-bar {
+  background: $light-gray;
+  display: flex;
+  align-items: center;
+  height: 10vh;
+  margin-bottom: 1px;
+  div {
+    a {
+      margin-left: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      color: darken($dark-gray, 50%);
+    }
+  }
+  nav {
+    ul {
+      display: flex;
+      justify-content: flex-end;
+      li {
+        font-size: 14px;
+        display: inline-block;
+        padding-right: 100px;
+        padding-left: 20px;
+        font-weight: 600;
+        a {
+          color: darken($dark-gray, 50%);
+          &:hover {
+            color: $blue;
+          }
+        }
+      }
+    }
+  }
+}
+
+.content-container {
+  overflow: hidden;
+}
