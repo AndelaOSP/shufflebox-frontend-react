@@ -1,7 +1,7 @@
 /* import dependencies */
 @import "base/base";
 @import "components/components";
-@import "~bulma";
+// @import "~bulma";
 
 *,
 body,
@@ -10,31 +10,24 @@ html {
   padding: 0;
 }
 
+.sub_intro{
+color: yellow;
+
+}
 body,
 html {
   height: 100vh;
   width: 100%;
 
-  #main {
-    height: inherit;
-    width: inherit;
+  #root > [data-reactroot] {
 
     .section {
-      height: inherit;
-      width: inherit;
-
       .container {
-        height: inherit;
-        width: inherit;
-
         .app-content {
           margin: 0;
-          height: inherit;
-          width: inherit;
 
           .sidenav {
             background-color: $main-blue;
-
             .header {
               nav {
                 height: $nav-height;
@@ -44,7 +37,6 @@ html {
           }
 
           .content {
-            height: inherit;
             .container--nav {
               background: $light-gray;
               height: 10vh;
