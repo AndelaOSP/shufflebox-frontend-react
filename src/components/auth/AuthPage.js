@@ -1,5 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router';
+import Header from './components/Header';
+import Content from './components/Content';
 
 class AuthPage extends React.Component {
   constructor(props){
@@ -9,7 +11,8 @@ class AuthPage extends React.Component {
   render(){
     return (
       <div>
-        <button onClick="do something">login with google</button>
+        <Header />
+        <Content />
       </div>
     );
   }

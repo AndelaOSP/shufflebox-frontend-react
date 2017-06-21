@@ -4,6 +4,10 @@
   align-items: center;
   height: 10vh;
   margin-bottom: 1px;
+  .is-48x48{
+    height: 48px; 
+    width: 48px
+  }
   div {
     a {
       margin-left: 10px;
