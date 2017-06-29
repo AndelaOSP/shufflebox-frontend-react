@@ -9,6 +9,10 @@
   margin-right: 9px;
 }
 
+.brownbag-view {
+  background-color: whitesmoke
+}
+
 .user-info {
   display: inline-grid;
 }
@@ -16,6 +20,19 @@
 .skipped-brown-bag {
   vertical-align: middle;
   background-color: lightgrey;
+}
+
+.onlist-brown-bag {
+  position: absolute;
+  right: 0px;
+  width: 300px;
+  background-color: whitesmoke;
+}
+
+.onlist-title {
+  text-align: center;
+  color: darkgrey;
+  font-style: black;
 }
 
 .mdl-button {

@@ -1,6 +1,7 @@
 import React from 'react';
 import SkippedBrownBag from './SkippedBrownBag';
 import ShuffleEvents from '../ShuffleEvents';
+import OnListBrownBag from './OnListBrownBag';
 
 class BrownBag extends React.Component {
   constructor(props){
@@ -9,9 +10,10 @@ class BrownBag extends React.Component {
 
   render(){
     return (
-      <div>
+      <div className="brownbag-view">
         <SkippedBrownBag />
         <ShuffleEvents />
+        <OnListBrownBag />
       </div>
     );
   }
