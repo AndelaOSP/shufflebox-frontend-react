@@ -22,13 +22,13 @@
   background-color: lightgrey;
 }
 
+.upcoming-title {
+  padding-left: 15px;
+}
+
 .upcoming-brown-bag {
   vertical-align: middle; 
   background-color: white;
-}
-
-.upcoming-title {
-  padding-left: 15px;
 }
 
 .onlist-brown-bag {
