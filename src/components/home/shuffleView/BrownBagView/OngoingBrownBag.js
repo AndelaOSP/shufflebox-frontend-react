@@ -1,6 +1,6 @@
 import React from 'react';
 
-class OnListBrownBag extends React.Component {
+class OngoingBrownBag extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -29,4 +29,4 @@ class OnListBrownBag extends React.Component {
   }
 }
 
-export default OnListBrownBag;
+export default OngoingBrownBag;
