@@ -20,9 +20,9 @@
   margin-right: 9px;
 }
 
-.brownbag-view {
-  background-color: whitesmoke
-}
+/*.brownbag-view {
+  background-color: whitesmoke;
+}*/
 
 .user-info {
   display: inline-grid;
@@ -30,7 +30,11 @@
 
 .skipped-brown-bag {
   vertical-align: middle;
-  background-color: lightgrey;
+  background-color: whitesmoke;
+  margin: auto;
+  width: 40%;
+  border: 1px solid lightgrey;
+  padding: 10px;
 }
 
 .previous-brown-bag {
@@ -51,9 +55,13 @@
 }
 
 .onlist-brown-bag {
+  border-style: solid;
+  border-width: thin;
+  border-color: lightgrey;
   position: absolute;
   right: 0px;
-  width: 300px;
+  top: 0px;
+  width: 29.2%;
   background-color: whitesmoke;
 }
 
@@ -88,9 +96,16 @@
 
 .shuffle-brown-bag {
   padding-top: 1px;
-  padding-left: 25px;
-  background-color: lightgrey;
+  padding-left: 40%;
+  background-color: white;
+  border-color: lightgrey;
+  border-width: thin;
+  border-style: solid;
+  border-top: 0px;
   height: 180px;
+  margin: auto;
+  width: 40%;
+  padding: 10px;
 }
 
 .mdl-grid {
