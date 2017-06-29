@@ -22,6 +22,15 @@
   background-color: lightgrey;
 }
 
+.upcoming-brown-bag {
+  vertical-align: middle; 
+  background-color: white;
+}
+
+.upcoming-title {
+  padding-left: 15px;
+}
+
 .onlist-brown-bag {
   position: absolute;
   right: 0px;

@@ -1,5 +1,6 @@
 import React from 'react';
 import SkippedBrownBag from './SkippedBrownBag';
+import UpcomingBrownBag from './UpcomingBrownBag';
 import ShuffleEvents from '../ShuffleEvents';
 import OngoingBrownBag from './OngoingBrownBag';
 
@@ -12,12 +13,12 @@ class BrownBag extends React.Component {
     return (
       <div className="brownbag-view">
         <div className="left-panel">
+          <UpcomingBrownBag />
           <SkippedBrownBag />
           <ShuffleEvents />
-          <OngoingBrownBag />
         </div>
         <div className="right-panel">
-          {/* add the on going list and visitors list components here */}
+          <OngoingBrownBag />
         </div>
       </div>
     );
