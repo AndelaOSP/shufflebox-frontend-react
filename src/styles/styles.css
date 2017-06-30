@@ -3,9 +3,20 @@
   height: 50px;
   background-size: cover;
   display: inline-block;
-  border-radius: 140px;
-  -webkit-border-radius: 140px;
-  -moz-border-radius: 140px;
+  border-radius: 160px;
+  -webkit-border-radius: 160px;
+  -moz-border-radius: 160px;
+  margin-right: 9px;
+}
+
+.visitor-avatar{
+  width: 70px;
+  height: 70px;
+  background-size: cover;
+  display: inline-block;
+  border-radius: 170px;
+  -webkit-border-radius: 170px;
+  -moz-border-radius: 170px;
   margin-right: 9px;
 }
 
@@ -35,7 +46,7 @@
 }
 
 .upcoming-brown-bag {
-  vertical-align: middle; 
+  vertical-align: middle;
   background-color: white;
 }
 
@@ -47,7 +58,8 @@
 }
 
 .onlist-title {
-  text-align: center;
+  text-align: left;
+  padding-left: 1.5em;
   color: #222325;
   font-style: black;
 }
@@ -101,7 +113,7 @@
 
 .settings-panel {
   padding-left: 91%;
-  background-color: #3f51b5; 
+  background-color: #3f51b5;
 }
 
 .mdl-cell {
@@ -166,4 +178,8 @@
 
 .mdl-layout__container {
   width: 63%;
+}
+
+.mdl-list__item--two-line .mdl-list__item-primary-content {
+  height: 70px;
 }
