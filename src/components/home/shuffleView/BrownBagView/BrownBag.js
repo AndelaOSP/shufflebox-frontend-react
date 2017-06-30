@@ -4,6 +4,7 @@ import UpcomingBrownBag from './UpcomingBrownBag';
 import ShuffleEvents from '../ShuffleEvents';
 import OngoingBrownBag from './OngoingBrownBag';
 import PreviousBrownBag from './PreviousBrownBag';
+import VisitorBrownBag from './VisitorBrownBag';
 
 class BrownBag extends React.Component {
   constructor(props){
@@ -21,6 +22,7 @@ class BrownBag extends React.Component {
         </div>
         <div className="right-panel">
           <OngoingBrownBag />
+          <VisitorBrownBag />
         </div>
       </div>
     );
