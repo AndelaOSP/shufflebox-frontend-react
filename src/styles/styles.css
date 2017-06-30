@@ -22,7 +22,15 @@
   background-color: lightgrey;
 }
 
+.previous-brown-bag {
+  background-color: #fefefe
+}
+
 .upcoming-title {
+  padding-left: 25px;
+}
+
+.title {
   padding-left: 25px;
 }
 
