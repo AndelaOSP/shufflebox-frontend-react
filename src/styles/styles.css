@@ -8,6 +8,15 @@
   -moz-border-radius: 160px;
   margin-right: 9px;
 }
+.left-panel {
+  width: 60%;
+  border-right: thin solid lightgrey;
+}
+
+.right-panel {
+  width: 40%;
+  background-color: whitesmoke;
+}
 
 .visitor-avatar{
   width: 70px;
@@ -20,9 +29,19 @@
   margin-right: 9px;
 }
 
-/*.brownbag-view {
+.visitors-brown-bag {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  width: 39.9%;
   background-color: whitesmoke;
-}*/
+  padding-top: 150px;
+  padding-bottom: 150px;
+
+}
+.visitors-title {
+
+}
 
 .user-info {
   display: inline-grid;
@@ -30,19 +49,21 @@
 
 .skipped-brown-bag {
   vertical-align: middle;
+  width: 100%;
   background-color: whitesmoke;
-  margin: auto;
-  width: 40%;
-  border: 1px solid lightgrey;
-  padding: 10px;
+  border-top: thin solid lightgrey;
 }
 
 .previous-brown-bag {
-  background-color: #fefefe
+  background-color: #fefefe;
+  width: 100%;
+
 }
 
 .upcoming-title {
   padding-left: 25px;
+  width: 95.5%;
+  border-top: thin solid lightgrey;
 }
 
 .title {
@@ -52,17 +73,16 @@
 .upcoming-brown-bag {
   vertical-align: middle;
   background-color: white;
+  width: 100%;
 }
 
 .onlist-brown-bag {
-  border-style: solid;
-  border-width: thin;
-  border-color: lightgrey;
   position: absolute;
   right: 0px;
   top: 0px;
-  width: 29.2%;
+  width: 39.9%;
   background-color: whitesmoke;
+  padding-bottom: 250px;
 }
 
 .onlist-title {
@@ -95,17 +115,9 @@
 }
 
 .shuffle-brown-bag {
-  padding-top: 1px;
-  padding-left: 40%;
+  vertical-align: middle;
   background-color: white;
-  border-color: lightgrey;
-  border-width: thin;
-  border-style: solid;
-  border-top: 0px;
-  height: 180px;
-  margin: auto;
-  width: 40%;
-  padding: 10px;
+  width: 100%;
 }
 
 .mdl-grid {
@@ -173,7 +185,7 @@
 .user-statement {
   padding-top: 15px;
   padding-left: 10px;
-  font-size: 10px; 
+  font-size: 10px;
 
 }
 
@@ -198,3 +210,5 @@
 .mdl-list__item--two-line .mdl-list__item-primary-content {
   height: 70px;
 }
+
+.date {}
