@@ -22,7 +22,7 @@ class PreviousBrownBag extends React.Component {
                                 <span>Jane Doe</span>
                         </span>
                         <span className="mdl-list__item-secondary-action">
-                            <label className="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="list-checkbox-1">
+                            <label className="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" htmlFor="list-checkbox-1">
                                 <input type="checkbox" id="list-checkbox-1" className="mdl-checkbox__input" checked />
                             </label>
                         </span>
@@ -36,7 +36,7 @@ class PreviousBrownBag extends React.Component {
                                 <span>John Doe</span>
                         </span>
                         <span className="mdl-list__item-secondary-action">
-                            <label className="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="list-checkbox-1">
+                            <label className="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" htmlFor="list-checkbox-1">
                                 <input type="checkbox" id="list-checkbox-1" className="mdl-checkbox__input" checked />
                             </label>
                         </span>
