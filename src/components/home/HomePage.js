@@ -1,6 +1,8 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 import BrownBag from './shuffleView/BrownBagView/BrownBag';
 import Calendar from './calendarView/Calendar';
+
+import {connect} from 'react-redux';
 
 class HomePage extends React.Component {
   constructor(props){
@@ -62,4 +64,14 @@ class HomePage extends React.Component {
   }
 }
 
-export default HomePage;
+HomePage.propTypes = {
+  brownbag: PropTypes.object
+};
+
+function mapStateToProps(state, ownProps) {
+  return {
+    brownbag: state.brownbagReducer
+  };
+}
+
+export default connect(mapStateToProps)(HomePage);
