@@ -1,8 +1,9 @@
 import {combineReducers} from 'redux';
-import {brownbagReducer} from './brownbagReducer';
+import {brownbagReducer, previousCandidatesReducer} from './brownbagReducer';
 
 const rootReducer = combineReducers({
-  brownbagReducer
+  brownbagReducer,
+  previousCandidatesReducer
 });
 
 export default rootReducer;
