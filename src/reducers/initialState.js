@@ -17,7 +17,7 @@ export default {
         "username": "test-user-1",
         "email": "test-user1@andela.com",
         "profile": {
-          "avatar": "https://lh6.googleusercontent.com/-CjVD7LKbqrc/AAAAAAAAAAI/AAAAAAAAABc/I9SxGge2T_A/photo.jpg?sz=50",
+          "avatar": "https://motherboard-images.vice.com//content-images/contentimage/41599/1485499779158756.jpg",
           "birth_date": null,
           "bio": ""
         }
@@ -32,7 +32,7 @@ export default {
         "username": "test-user-2", 
         "email": "test-user2@andela.com",
         "profile": { 
-          "avatar": "https://lh6.googleusercontent.com/-CjVD7LKbqrc/AAAAAAAAAAI/AAAAAAAAABc/I9SxGge2T_A/photo.jpg?sz=50",
+          "avatar": "https://motherboard-images.vice.com//content-images/contentimage/41599/1485499779158756.jpg",
           "birth_date": null, 
           "bio": "" 
         }
@@ -49,7 +49,7 @@ export default {
         "username": "test-user-3",
         "email": "test-user3@andela.com",
         "profile": {
-          "avatar": "https://lh6.googleusercontent.com/-CjVD7LKbqrc/AAAAAAAAAAI/AAAAAAAAABc/I9SxGge2T_A/photo.jpg?sz=50",
+          "avatar": "https://motherboard-images.vice.com//content-images/contentimage/41599/1485499779158756.jpg",
           "birth_date": null,
           "bio": ""
         }
@@ -64,7 +64,7 @@ export default {
         "username": "test-user-4", 
         "email": "test-user4@andela.com",
         "profile": { 
-          "avatar": "https://lh6.googleusercontent.com/-CjVD7LKbqrc/AAAAAAAAAAI/AAAAAAAAABc/I9SxGge2T_A/photo.jpg?sz=50",
+          "avatar": "https://motherboard-images.vice.com//content-images/contentimage/41599/1485499779158756.jpg",
           "birth_date": null, 
           "bio": "" 
         }
@@ -79,7 +79,7 @@ export default {
         "username": "test-user-5", 
         "email": "test-user5@andela.com",
         "profile": { 
-          "avatar": "https://lh6.googleusercontent.com/-CjVD7LKbqrc/AAAAAAAAAAI/AAAAAAAAABc/I9SxGge2T_A/photo.jpg?sz=50",
+          "avatar": "https://motherboard-images.vice.com//content-images/contentimage/41599/1485499779158756.jpg",
           "birth_date": null, 
           "bio": "" 
         }
@@ -94,7 +94,7 @@ export default {
         "username": "test-user-6", 
         "email": "test-user6@andela.com",
         "profile": { 
-          "avatar": "https://lh6.googleusercontent.com/-CjVD7LKbqrc/AAAAAAAAAAI/AAAAAAAAABc/I9SxGge2T_A/photo.jpg?sz=50",
+          "avatar": "https://motherboard-images.vice.com//content-images/contentimage/41599/1485499779158756.jpg",
           "birth_date": null, 
           "bio": "" 
         }
@@ -109,7 +109,7 @@ export default {
         "username": "test-user-7", 
         "email": "test-user7@andela.com",
         "profile": { 
-          "avatar": "https://lh6.googleusercontent.com/-CjVD7LKbqrc/AAAAAAAAAAI/AAAAAAAAABc/I9SxGge2T_A/photo.jpg?sz=50",
+          "avatar": "https://motherboard-images.vice.com//content-images/contentimage/41599/1485499779158756.jpg",
           "birth_date": null, 
           "bio": "" 
         }
@@ -122,7 +122,7 @@ export default {
       "username": "test-user-9",
       "email": "test-user9@andela.com",
       "profile": {
-        "avatar": "https://lh6.googleusercontent.com/-CjVD7LKbqrc/AAAAAAAAAAI/AAAAAAAAABc/I9SxGge2T_A/photo.jpg?sz=50",
+        "avatar": "https://motherboard-images.vice.com//content-images/contentimage/41599/1485499779158756.jpg",
         "birth_date": null,
         "bio": ""
       }
@@ -134,7 +134,7 @@ export default {
       "username": "test-user20",
       "email": "test-use20@andela.com",
       "profile": {
-        "avatar": "https://lh6.googleusercontent.com/-CjVD7LKbqrc/AAAAAAAAAAI/AAAAAAAAABc/I9SxGge2T_A/photo.jpg?sz=50",
+        "avatar": "https://motherboard-images.vice.com//content-images/contentimage/41599/1485499779158756.jpg",
         "birth_date": null,
         "bio": ""
       }
@@ -144,7 +144,7 @@ export default {
       "username": "test-user21",
       "email": "test-use20@andela.com",
       "profile": {
-        "avatar": "https://lh6.googleusercontent.com/-CjVD7LKbqrc/AAAAAAAAAAI/AAAAAAAAABc/I9SxGge2T_A/photo.jpg?sz=50",
+        "avatar": "https://motherboard-images.vice.com//content-images/contentimage/41599/1485499779158756.jpg",
         "birth_date": null,
         "bio": ""
       }

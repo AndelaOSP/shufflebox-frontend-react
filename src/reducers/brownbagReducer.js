@@ -17,3 +17,10 @@ export function previousCandidatesReducer(state=initialState.previous_brownbag_l
       return state;
   }
 }
+
+export function skippedCandidatesReducer(state=initialState.skipped_brown_bag, action) {
+  switch (action.type) {
+    default:
+      return state;
+  }
+}
