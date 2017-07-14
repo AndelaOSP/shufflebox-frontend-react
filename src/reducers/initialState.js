@@ -149,5 +149,10 @@ export default {
         "bio": ""
       }
     }
-  ]
+  ],
+  confirm_modal: {
+    isShowing: false,
+    id: 0,
+    message: ''
+  }
 };
