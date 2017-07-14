@@ -61,7 +61,6 @@ class PreviousBrownBag extends React.Component {
           <h6>Previous Brownbag</h6>
           <span className="mdl-list__item-sub-title">27 jan</span>
         </div>
-        <button onClick={this.handleConfirm}>delete</button>
         <ul className="mdl-list">
           {this.listPreviousCandidates(this.props.previous_candidates_list)}
         </ul>
