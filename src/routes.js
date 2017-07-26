@@ -7,7 +7,7 @@ import HomePage from "./components/home/HomePage";
 
 export default (
   <Route path="/" component={App}>
-    <IndexRoute component={AuthPage} />
+    <IndexRoute component={LandingPage} />
     <Route path="/auth/login/" component={AuthPage} />
     <Route path="/home" component={HomePage} />
   </Route>
