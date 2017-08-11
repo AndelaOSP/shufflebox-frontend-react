@@ -33,6 +33,16 @@ export default {
     })
   ],
   module: {
+    rules: [{
+            test: /\.scss$/,
+            use: [{
+                loader: "style-loader" // creates style nodes from JS strings
+            }, {
+                loader: "css-loader" // translates CSS into CommonJS
+            }, {
+                loader: "sass-loader" // compiles Sass to CSS
+            }]
+        }],
     loaders: [
       {
         test: /\.js$/,
@@ -54,6 +64,7 @@ export default {
         test: /\.(png|jpg|)$/,
         loader: "url-loader?limit=200000"
       },
+      {test: /(\.scss)$/, loaders: ['style-loader', 'css-loader', 'sass-loader']},
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
         loader: "image-webpack-loader",
