@@ -21,10 +21,10 @@ class OngoingBrownBag extends React.Component {
         <span className="mdl-list__item-primary-content">
           <img
           className="avatar"
-          src="https://motherboard-images.vice.com//content-images/contentimage/41599/1485499779158756.jpg"
+          src={user.profile.avatar}
           alt="user image not found"/>
           <div className="user-info">
-            <span>{user.username}</span>
+            <span>{`${user.first_name} ${user.last_name}`}</span>
           </div>
         </span>
       </li>
