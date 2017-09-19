@@ -1,43 +1,59 @@
-# shufflebox-frontend-react
+# Shufflebox (web client)
 
-What is ShuffleBox You ask? ShuffleBox is an app for Andelans by Andelans to allow you to automate the task of selecting Andelans for hangouts, brown bag and secret santa.
+Shufflebox is an application that provides random selections and groupings for social events at Andela Kenya
 
-# Quick reference on the same
-* Hangouts: This is where different Andelans are randomly selected to hangout and get to know one another and share in different activities
+## Supported Events
 
-* Secret Santa: This is where a group of Andelans are randomly assigned a person to whom they give a gift during End Of Year Party. The identity of the gift giver is a secret not to be revealed.
-
-* Brown Bag: This is where an Andelan is selected randomly to share more about themselves over lunch hence the name brownbag
-
-GET STARTED
+* Hangouts
+* Secret Santa
+* Brown Bag
 
 
-## Running the App
+## Getting Started
 
-* clone the repo by running:
-    * Using HTTPS :
-  ```$ git clone https://github.com/AndelaOSP/shufflebox-frontend-react.git```
+* Clone the repo
 
-    * Using SSH :
-  ```$ git clone git@github.com:AndelaOSP/shufflebox-frontend-react.git ```
+```bash
+$ git clone https://github.com/AndelaOSP/shufflebox-frontend-react.git # HTTPS
+$ git clone git@github.com:AndelaOSP/shufflebox-frontend-react.git # SSH
+```
 
-* Then run the following command to install node dependencies:
+* Install dependencies
 
-  ```$ npm install```
-  
-* To start the server, run the command:
-   ```$ npm start ```
+```bash
+$ npm install
+```
 
-## Eslint
-* To run eslint, run the command:
-   ```$ npm run lint ```
+* Start the server
 
-* To add a watcher for every time a file is modified, run the command as:
-    ```$ npm run lint --watch```
+```bash
+$ npm start
+```
 
-## Test
-* To run tests, run the command:
-   ```$ npm run test ```
+### ESLint
 
-* To add a watcher for every time a file is modified, run the command as:
-    ```$ npm run test --watch```
+* Run eslint
+
+```bash
+$ npm run lint
+```
+
+* Run eslint with watcher
+
+```bash
+$ npm run link --watch
+```
+
+### Tests
+
+* Run the tests:
+
+```bash
+   $ npm run test
+```
+
+* Run test watcher
+
+```bash
+$ npm run test --watch
+```
