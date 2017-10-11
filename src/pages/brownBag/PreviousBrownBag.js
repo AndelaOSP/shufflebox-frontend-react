@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from "prop-types";
 import { connect } from 'react-redux';
 import UUID from 'node-uuid';
-import * as actions from '../../redux/actions/ModalActions';
+import * as actions from '../../redux/actions/modalActions';
 import { Button, Glyphicon, Modal } from 'react-bootstrap';
 import modalTypes from '../../enums/modalTypes';
 
