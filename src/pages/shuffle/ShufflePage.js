@@ -20,7 +20,7 @@ class ShufflePage extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     const groups = /\/(\w+)$/g.exec(nextProps.location.pathname); // get current tab
-    this.setState({ tab: groups[1] });  
+    this.setState({ tab: groups[1] });
   }
 
   render() {
@@ -30,7 +30,7 @@ class ShufflePage extends React.Component {
     return (
       <div className={styles.shuffleContainer}>
         <SidePanel />
-        <div>
+        <div className={styles.tabsContainer}>
           <NavTabs>
             <LinkContainer to={'/shuffle/brownbag'}>
               <NavItem>Brown Bag</NavItem>
@@ -43,7 +43,7 @@ class ShufflePage extends React.Component {
             </LinkContainer>
             <Button className={styles.ellipsis}><Glyphicon glyph="option-horizontal" /></Button>
           </NavTabs>
-          <div className={styles.shuffle}>       
+          <div className={styles.shuffle}>
             <div className={brownBagTab ? styles.brownBag : styles.hide}>
               <BrownBagContainer />
             </div>
@@ -61,7 +61,7 @@ class ShufflePage extends React.Component {
           </div>
 
           </div>
-        </div>    
+        </div>
       </div>
     );
   }
