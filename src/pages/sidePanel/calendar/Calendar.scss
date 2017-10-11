@@ -5,7 +5,7 @@
 }
 
 .calendarWidget {
-  margin-top: 4rem;
+  margin: 4rem 0;
 }
 
 .chevronButton {
@@ -19,8 +19,16 @@
     top: 0.4rem;
     right: 0.4rem;
   }
+  &:focus {
+    outline: none !important;
+  }
 }
 
+.calendarHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 3.5em;
+}
 .month {
   margin: 0 18%;
   text-transform: uppercase;
@@ -32,7 +40,7 @@
   margin: 2rem 1rem;
   span {
     margin-right: 5rem;
-    color: $gray;
+    color: $dark-gray;
   }
 }
 
@@ -42,26 +50,106 @@
   color: $gray;
   display: inline-block;
 
-  &.today {
-    background:#E3F2FF;
-  }
+  // &.today {
+  //   border: solid $blue;
+  //   color:green;
+  // }
 
-  &.different-month {
-    color:#C0C0C0;
-  }
+  // &.differentMonth {
+  //   color: $dark-gray;
+  // }
 
-  &.current-month {
-    color: red;
-  }
+  // &.currentMonth {
+  //   color: red;
+  // }
+}
+
+.today {
+  @extend .dayNumbers;
+  border: 1px solid $blue;
+  border-radius: 50%;
+  color:green;
+  padding: 0.5rem;
+  margin-right: 3rem;
+}
+
+.differentMonth {
+  @extend .dayNumbers;
+  color: red;
 }
 
 .info {
-  margin: 4rem 0;
-  span {
-    color: lighten($dark-blue, 20%);
+  margin: 2rem;
+  // span {
+  //   color: lighten($dark-blue, 20%);
+  // }
+  // h5 {
+  //   font-size: 2rem;
+  //   color: #fff;
+  // }
+}
+
+.label {
+  color: $dark-gray;
+}
+
+.circle {
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+
+}
+
+.currentDate {
+  display: flex;
+  div {
+    @extend .circle;
+    border: solid $blue;
   }
-  h5 {
-    font-size: 2rem;
-    color: #fff;
+
+  span {
+    color: lighten($gray, 10%);
+    font-weight: 500;
+    margin-left: 1rem;
+  }
+}
+
+.colorCodes {
+  margin-top: 2rem;
+  display: flex;
+  div:nth-child(1) {
+    @extend .circle;
+  }
+
+  div:nth-child(2) {
+    margin-left: 1rem;
+    span:nth-child(1) {
+      color: $dark-gray;
+    }
+    span:nth-child(2) {
+        color: lighten($gray, 10%);
+        font-weight: 500;
+        display: block;
+    }
+  }
+}
+.brownBag {
+  @extend .colorCodes;
+  div:nth-child(1) {
+    background: red;
+  }
+}
+
+.secretSanta {
+  @extend .brownBag;
+  div:nth-child(1) {
+    background: white;
+  }
+}
+
+.hangouts {
+  @extend .colorCodes;
+  div:nth-child(1) {
+    background: $blue;
   }
 }
