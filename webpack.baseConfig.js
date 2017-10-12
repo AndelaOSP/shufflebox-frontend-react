@@ -66,6 +66,10 @@ module.exports =  {
           }
         ]
       },
+      {
+        test: /\.html$/,
+        loader: 'html-loader',
+      },
       // the url-loader uses DataUrls.
       // the file-loader emits files.
       {
