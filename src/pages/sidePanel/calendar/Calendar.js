@@ -73,7 +73,7 @@ export default class Calendar extends React.Component {
     }
 
     return (
-      <div>
+      <div className={styles.weeks}>
         {days}
       </div>
     );
