@@ -1,8 +1,25 @@
 import React from 'react';
 import { Button, Glyphicon } from 'react-bootstrap';
-import { format, isSameDay, addWeeks, startOfMonth, addDays, addMonths, subMonths, subWeeks, setDay, getMonth } from 'date-fns';
-
-console.log('hahahha', startOfMonth(new Date()))
+import {
+  format,
+  isSameDay,
+  addWeeks,
+  startOfMonth,
+  addDays,
+  addMonths,
+  subMonths,
+  startOfWeek,
+  subWeeks,
+  endOfMonth,
+  setDay,
+  getMonth,
+  subDays,
+  isFriday,
+  isToday,
+  isFirstDayOfMonth,
+  lastDayOfMonth,
+  isSameMonth
+} from 'date-fns';
 
 const styles = require('./Calendar.scss');
 
@@ -34,16 +51,24 @@ export default class Calendar extends React.Component {
     for (let i = 0; i < 7; i++) {
       const day = {
         number: format(date, 'DD'),
-        isToday: isSameDay(date, new Date()),
-        isCurrentMonth: getMonth(date) === getMonth(this.state.date)
+        isToday: isToday(date),
+        isSameMonth: isSameMonth(date, this.state.date), 
+        isFriday: isFriday(date),
+        firstDay: isFirstDayOfMonth(date),
+        month: getMonth(date),
+        lastFriday: this.isSameMonth ? addDays(startOfWeek(endOfMonth(date)), 5) : subDays(addDays(startOfWeek(endOfMonth(date)), 5), 7),
+        secretSanta: addDays(startOfWeek(addWeeks(startOfMonth(date), 2)), 5)
       };
-      console.log('month', format(date, 'MMMM'))
-      console.log('day', format(date, 'DD'))
-      console.log('state month', format(this.state.date, 'MMMM'))
-      console.log('time', day.isCurrentMonth)
-      // days.push(<div className={styles.dayNumbers + (day.isToday ? " today" : "") + (day.isCurrentMonth ? " currentMonth" : " differentMonth")}>{day.number}</div>);
-      days.push(<div className={day.isToday ? styles.today : day.isCurrentMonth ? styles.dayNumbers : styles.differentMonth}>{day.number}</div>)
-      // date = date.clone();
+ 
+      days.push(
+        <div className={day.isToday ? styles.today : day.isSameMonth ? styles.dayNumbers : styles.differentMonth}>
+          {day.number}
+          <div className={styles.eventMarkers}>
+            <div className={day.isFriday && day.isSameMonth ? styles.friday : styles.noEvent}/>
+            <div className={isSameDay(day.secretSanta, date) && day.month === 11 ? styles.december : styles.noEvent}/>
+            <div className={isSameDay(day.lastFriday, date) ? styles.hangoutMonth : styles.noEvent}/>
+          </div> 
+        </div>);
       date = addDays(date, 1);
     }
 
@@ -60,8 +85,6 @@ export default class Calendar extends React.Component {
     currentDate = setDay(startOfMonth(this.state.date), 0),
     monthIndex = getMonth(currentDate),
     count = 0;
-    console.log('renderWeek--->', format(currentDate, 'MMMM'))
-    console.log('current Date', currentDate)
 
     while (!done) {
       weeks.push(this.weeks(currentDate));
@@ -76,8 +99,6 @@ export default class Calendar extends React.Component {
   previous = () => {
     this.setState({
       date: subMonths(this.state.date, 1)
-    }, () => {
-      console.log('previous', this.state.date);
     });
   }
 
@@ -85,7 +106,6 @@ export default class Calendar extends React.Component {
     this.setState({
       date: addMonths(this.state.date, 1)
     });
-    console.log('after next', this.state.date.format('MMMM'))
   }
 
   render() {
