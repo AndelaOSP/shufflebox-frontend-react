@@ -1,11 +1,11 @@
-import webpack from 'webpack';
-import path from 'path';
-import dotenv from 'dotenv';
+const webpack = require('webpack');
+const path = require('path');
+const dotenv = require('dotenv');
 
 dotenv.config();
 // process.traceDeprecation = true;
 
-export default {
+module.exports =  {
   // debug: true,
   devtool: 'inline-source-map',
   // noInfo: false,
@@ -36,11 +36,16 @@ export default {
   module: {
     rules: [{
         test: /\.js$/,
-        use: ['babel-loader'],
+        use: [{
+          loader: 'babel-loader',
+          query: {
+            presets: ['es2015','react', 'stage-1']
+          }
+        }],
         exclude: /node_modules/
       },
       {
-        test: /\.css/,
+        test: /\.css$/,
         include: /node_modules/,
         use: [{
           loader: 'style-loader'
@@ -85,19 +90,7 @@ export default {
         use: 'file-loader'
       }
     ],
-    loaders: [{
-        test: /\.js$/,
-        include: path.join(__dirname, 'src'),
-        loaders: ['babel']
-      },
-      {
-        test: /(\.css)$/,
-        loaders: ['style', 'css']
-      },
-      {
-        test: /(\.scss)$/,
-        loaders: ['style-loader', 'css-loader', 'sass-loader']
-      },
+    loaders: [
       {
         test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
         loader: 'url-loader?limit=10000&mimetype=application/font-woff'
