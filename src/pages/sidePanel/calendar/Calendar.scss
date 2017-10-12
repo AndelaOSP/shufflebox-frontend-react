@@ -50,19 +50,6 @@
   margin-bottom: 2rem;
   color: $gray;
   display: inline-block;
-
-  // &.today {
-  //   border: solid $blue;
-  //   color:green;
-  // }
-
-  // &.differentMonth {
-  //   color: $dark-gray;
-  // }
-
-  // &.currentMonth {
-  //   color: red;
-  // }
 }
 
 .today {
@@ -81,13 +68,6 @@
 
 .info {
   margin: 2rem;
-  // span {
-  //   color: lighten($dark-blue, 20%);
-  // }
-  // h5 {
-  //   font-size: 2rem;
-  //   color: #fff;
-  // }
 }
 
 .label {
@@ -153,4 +133,36 @@
   div:nth-child(1) {
     background: $blue;
   }
+}
+
+.friday {
+  background: red;
+  border-radius: 50%;
+  width: 0.5rem;
+  height: 0.5rem;
+  margin: auto;
+}
+
+.december {
+  background: #fff;
+  border-radius: 50%;
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
+.noEvent {
+  display: none;
+}
+
+.hangoutMonth {
+  background: $blue;
+  border-radius: 50%;
+  width: 0.5rem;
+  height: 0.5rem;
+  margin-left: 0.3rem;
+}
+
+.eventMarkers {
+  display: flex;
+  justify-content: space-between;
 }
