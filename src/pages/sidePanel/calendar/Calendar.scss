@@ -29,6 +29,7 @@
   justify-content: space-between;
   margin-right: 3.5em;
 }
+
 .month {
   margin: 0 18%;
   text-transform: uppercase;
@@ -75,7 +76,7 @@
 
 .differentMonth {
   @extend .dayNumbers;
-  color: red;
+  color: darken($dark-gray, 20%);
 }
 
 .info {

@@ -1,15 +1,17 @@
 import React from 'react';
-import moment from 'moment';
 import { Button, Glyphicon } from 'react-bootstrap';
+import { format, isSameDay, addWeeks, startOfMonth, addDays, addMonths, subMonths, subWeeks, setDay, getMonth } from 'date-fns';
+
+console.log('hahahha', startOfMonth(new Date()))
 
 const styles = require('./Calendar.scss');
 
 export default class Calendar extends React.Component {
   constructor(props) {
-    super(props);
+    super(props); 
 
     this.state = {
-      date: moment()
+      date:   new Date()
     };
   }
 
@@ -31,15 +33,18 @@ export default class Calendar extends React.Component {
     const days = [];
     for (let i = 0; i < 7; i++) {
       const day = {
-        number: date.format('DD'),
-        isToday: date.isSame(new Date(), 'day'),
-        isCurrentMonth: date.month() === date.month()
+        number: format(date, 'DD'),
+        isToday: isSameDay(date, new Date()),
+        isCurrentMonth: getMonth(date) === getMonth(this.state.date)
       };
+      console.log('month', format(date, 'MMMM'))
+      console.log('day', format(date, 'DD'))
+      console.log('state month', format(this.state.date, 'MMMM'))
       console.log('time', day.isCurrentMonth)
       // days.push(<div className={styles.dayNumbers + (day.isToday ? " today" : "") + (day.isCurrentMonth ? " currentMonth" : " differentMonth")}>{day.number}</div>);
       days.push(<div className={day.isToday ? styles.today : day.isCurrentMonth ? styles.dayNumbers : styles.differentMonth}>{day.number}</div>)
-      date = date.clone();
-      date.add(1, 'day');
+      // date = date.clone();
+      date = addDays(date, 1);
     }
 
     return (
@@ -52,16 +57,17 @@ export default class Calendar extends React.Component {
   renderWeeks() {
     let  weeks = [],
     done = false,
-    currentDate = this.state.date.startOf('month').day('Sunday'),
-    monthIndex = currentDate.month(),
+    currentDate = setDay(startOfMonth(this.state.date), 0),
+    monthIndex = getMonth(currentDate),
     count = 0;
-    // console.log('dateee--->', moment().startOf('month').day('Sunday'))
+    console.log('renderWeek--->', format(currentDate, 'MMMM'))
+    console.log('current Date', currentDate)
 
     while (!done) {
       weeks.push(this.weeks(currentDate));
-      currentDate.add(7, 'days');
-      done = count++ > 2 && monthIndex !== currentDate.month();
-      monthIndex = currentDate.month();
+      currentDate = addWeeks(currentDate, 1);
+      done = count++ > 2 && monthIndex !== getMonth(currentDate);
+      monthIndex = getMonth(currentDate);
     }
 
     return weeks;
@@ -69,7 +75,7 @@ export default class Calendar extends React.Component {
 
   previous = () => {
     this.setState({
-      date: this.state.date.subtract(2, 'months')
+      date: subMonths(this.state.date, 1)
     }, () => {
       console.log('previous', this.state.date);
     });
@@ -77,19 +83,20 @@ export default class Calendar extends React.Component {
 
   next = () => {
     this.setState({
-      date: this.state.date.add(0, 'months')
+      date: addMonths(this.state.date, 1)
     });
+    console.log('after next', this.state.date.format('MMMM'))
   }
 
   render() {
     return (
       <div className={styles.calendarContainer}>
         <div className={styles.calendarWidget}>
-        <div>
+        <div className={styles.calendarHeader}>
           <Button className={styles.chevronButton} onClick={this.previous}>
             <Glyphicon glyph="chevron-left"/>
           </Button>
-            <span className={styles.month}>{this.state.date.format('MMMM YYYY')}</span>
+            <span className={styles.month}>{format(this.state.date,'MMMM YYYY')}</span>
           <Button className={styles.chevronButton} onClick={this.next}>
             <Glyphicon glyph="chevron-right"/>
           </Button>
