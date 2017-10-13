@@ -62,7 +62,7 @@
   border: 1px solid $blue;
   border-radius: 50%;
   color:green;
-  padding: 0.5rem;
+  padding: 0.1rem 0.5rem;
 }
 
 .differentMonth {
@@ -80,13 +80,14 @@
 
 .circle {
   border-radius: 50%;
-  width: 3rem;
-  height: 3rem;
+  width: 2rem;
+  height: 2rem;
 
 }
 
 .currentDate {
   display: flex;
+  align-items: center;
   div {
     @extend .circle;
     border: solid $blue;
@@ -102,6 +103,7 @@
 .colorCodes {
   margin-top: 2rem;
   display: flex;
+  align-items: center;
   div:nth-child(1) {
     @extend .circle;
   }
