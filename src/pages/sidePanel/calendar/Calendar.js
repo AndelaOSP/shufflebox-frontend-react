@@ -61,19 +61,19 @@ export default class Calendar extends React.Component {
       };
  
       days.push(
-        <div className={day.isToday ? styles.today : day.isSameMonth ? styles.dayNumbers : styles.differentMonth}>
+        <div className={day.isToday ? styles.today : day.isSameMonth ? styles.dayNumbers : styles.differentMonth} key={day.number}>
           {day.number}
-          <div className={styles.eventMarkers}>
-            <div className={day.isFriday && day.isSameMonth ? styles.friday : styles.noEvent}/>
-            <div className={isSameDay(day.secretSanta, date) && day.month === 11 ? styles.december : styles.noEvent}/>
-            <div className={isSameDay(day.lastFriday, date) ? styles.hangoutMonth : styles.noEvent}/>
+          <div className={styles.eventMarkers} key={'event marker'}>
+            <div className={day.isFriday && day.isSameMonth ? styles.friday : styles.noEvent} key={'brownbag'}/>
+            <div className={isSameDay(day.secretSanta, date) && day.month === 11 ? styles.december : styles.noEvent} key={'secret santa'}/>
+            <div className={isSameDay(day.lastFriday, date) ? styles.hangoutMonth : styles.noEvent} key={'hangout'}/>
           </div> 
         </div>);
       date = addDays(date, 1);
     }
 
     return (
-      <div className={styles.weeks}>
+      <div className={styles.weeks} key={date}>
         {days}
       </div>
     );
