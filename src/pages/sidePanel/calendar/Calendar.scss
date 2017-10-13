@@ -1,12 +1,174 @@
 @import '../../../styles/base/_variables.scss';
 
-.info {
-  margin: 4rem 7rem;
-  span {
-    color: lighten($dark-blue, 20%);
-  }
-  h5 {
+.calendarContainer {
+  margin-left: 7rem;
+}
+
+.calendarWidget {
+  margin: 4rem 0;
+}
+
+.chevronButton {
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  position: relative;
+  >span {
+    position: absolute;
     font-size: 2rem;
-    color: #fff;
+    top: 0.4rem;
+    right: 0.4rem;
   }
+  &:focus {
+    outline: none !important;
+  }
+}
+
+.calendarHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 3.5em;
+}
+
+.month {
+  margin: 0 18%;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 2rem;
+}
+
+.dayNames {
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem 6rem 2rem 1rem;
+  span {
+    color: $dark-gray;
+  }
+}
+
+.weeks {
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem 6rem 2rem 1rem;
+}
+
+.dayNumbers {
+  color: $gray;
+  display: inline-block;
+}
+
+.today {
+  @extend .dayNumbers;
+  border: 1px solid $blue;
+  border-radius: 50%;
+  color:green;
+  padding: 0.1rem 0.5rem;
+}
+
+.differentMonth {
+  @extend .dayNumbers;
+  color: darken($dark-gray, 20%);
+}
+
+.info {
+  margin: 2rem;
+}
+
+.label {
+  color: $dark-gray;
+}
+
+.circle {
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+
+}
+
+.currentDate {
+  display: flex;
+  align-items: center;
+  div {
+    @extend .circle;
+    border: solid $blue;
+  }
+
+  span {
+    color: lighten($gray, 10%);
+    font-weight: 500;
+    margin-left: 1rem;
+  }
+}
+
+.colorCodes {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  div:nth-child(1) {
+    @extend .circle;
+  }
+
+  div:nth-child(2) {
+    margin-left: 1rem;
+    span:nth-child(1) {
+      color: $dark-gray;
+    }
+    span:nth-child(2) {
+        color: lighten($gray, 10%);
+        font-weight: 500;
+        display: block;
+    }
+  }
+}
+.brownBag {
+  @extend .colorCodes;
+  div:nth-child(1) {
+    background: red;
+  }
+}
+
+.secretSanta {
+  @extend .brownBag;
+  div:nth-child(1) {
+    background: white;
+  }
+}
+
+.hangouts {
+  @extend .colorCodes;
+  div:nth-child(1) {
+    background: $blue;
+  }
+}
+
+.friday {
+  background: red;
+  border-radius: 50%;
+  width: 0.5rem;
+  height: 0.5rem;
+  margin: auto;
+}
+
+.december {
+  background: #fff;
+  border-radius: 50%;
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
+.noEvent {
+  display: none;
+}
+
+.hangoutMonth {
+  background: $blue;
+  border-radius: 50%;
+  width: 0.5rem;
+  height: 0.5rem;
+  margin-left: 0.3rem;
+}
+
+.eventMarkers {
+  display: flex;
+  justify-content: space-between;
 }
