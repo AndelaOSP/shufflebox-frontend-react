@@ -1,9 +1,9 @@
 import express from "express";
 import webpack from "webpack";
 import path from "path";
-import config from "../webpack.config.dev";
 import open from "open";
 
+const config = require('../webpack.config.dev');
 /* eslint-disable no-console */
 
 const port = process.env.PORT || 3000;
@@ -13,7 +13,7 @@ const compiler = webpack(config);
 app.use(
   require("webpack-dev-middleware")(compiler, {
     noInfo: true,
-    publicPath: config.output.publicPath
+    publicPath: '/'
   })
 );
 
