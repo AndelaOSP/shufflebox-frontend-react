@@ -44,10 +44,10 @@ class UpcomingBrownBag extends React.Component {
                 <span>{`${presenter.user.first_name} ${presenter.user.last_name}`}</span>
                 <span>{format(presenter.date, 'D MMM')}</span>
               </div>
-              <Button className={styles.confirmButton} bsStyle="primary" onClick={ () => this.handleConfirmBrownbag({ id: presenter.id, date: presenter.date, status:'' })}>
+              <Button className={styles.confirmButton} bsStyle="primary" onClick={() => this.handleConfirmBrownbag({id: presenter.id, date: presenter.date, status:''})}>
                 Confirm
               </Button>          
-              <Button bsStyle="danger" className={styles.cancelButton} onClick={() => this.handleCancelBrownbag({ id: presenter.id, date: presenter.date, status:'' })}>
+              <Button bsStyle="danger" className={styles.cancelButton} onClick={() => this.handleCancelBrownbag({id: presenter.id, date: presenter.date, status:''})}>
                 Cancel
               </Button>   
             </li>
