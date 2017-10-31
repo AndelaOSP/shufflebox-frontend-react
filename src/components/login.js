@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Redirect from 'react-router-dom';
+import {Redirect} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import jwt_decode from 'jwt-decode';
 
@@ -8,8 +8,13 @@ class Login extends Component{
     constructor(props){
         super(props);
         this.state = {
-            isLoggedIn: false
+            isLoggedIn: false,
+            isInvalidToken: false
         }
+        
+    }
+
+    componentDidMount() {
         this.checkToken();
     }
 
@@ -27,14 +32,15 @@ class Login extends Component{
         const token = this.getTokenFromURL();
         try{
             const {UserInfo} = jwt_decode(token);
-            console.log(UserInfo);
+            
             if (UserInfo.email.match("@andela.com")){
                 localStorage.setItem("token", token);
-
-                this.setState(state => ({isLoggedIn: true});
+                this.setState(state => ({isLoggedIn: true}));
+            } else {
+                this.setState(state => ({isInvalidToken: true}));
             }
         } catch (exception){
-            return;
+            this.setState(state => ({isInvalidToken: true}));
         }
        
     }
@@ -45,7 +51,11 @@ class Login extends Component{
         if (this.state.isLoggedIn){
             return <Redirect to="/shuffle/brownbag" />
         }
-        return <div>Invalid login</div>
+
+        if (this.state.isInvalidToken){
+            return <Redirect to="/" />
+        }
+        // return <div>Invalid login</div>
     }
 }
 
