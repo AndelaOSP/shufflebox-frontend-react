@@ -21,7 +21,7 @@ class PreviousBrownBag extends React.Component {
       }
     };
   }
-  
+
   handleClick = (user) => {
     this.props.showModal();
     this.setState({
