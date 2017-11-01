@@ -2,7 +2,7 @@ import * as types from '../actions/actionTypes';
 import initialState from './initialState';
 import modalTypes from '../../enums/modalTypes';
 
-export function modalReducer( state=initialState.modal, action) {
+export function modalReducer( state=initialState.ui.modal, action) {
   switch (action.type) {
     case types.OPEN_REMOVE_USER_CONFIRM_MODAL:
       return {
@@ -14,10 +14,9 @@ export function modalReducer( state=initialState.modal, action) {
       return {
         ...state,
         modal: modalTypes.NONE
-
       };
-  
+
     default:
-      return state;  
+      return state;
   }
 }
