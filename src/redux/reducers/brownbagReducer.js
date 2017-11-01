@@ -1,24 +1,32 @@
 import * as types from '../actions/actionTypes';
 import initialState from './initialState';
 
-export function brownbagReducer(state=initialState.brownbag_next_presenter, action) {
-  switch (action.type) {
-    default:
-      return state;  
-  }
-}
-
-export function previousCandidatesReducer(state=initialState.previous_brownbag_list, action) {
+export function brownbagReducer(state=initialState.entities.brownbag.next_presenter, action) {
   switch (action.type) {
     default:
       return state;
   }
 }
 
-export function ongoingCandidatesReducer(state=initialState.ongoing_brownbag_list, action) {
+export function previousCandidatesReducer(state=initialState.entities.brownbag.previous_presenters, action) {
   switch (action.type) {
-    case "RECEIVE_UNPRESENTED_USERS_SUCCESS":
-      return action.user;
+    default:
+      return state;
+  }
+}
+
+export function ongoingCandidatesReducer(state=initialState.entities.brownbag.ongoing, action) {
+  switch (action.type) {
+    case types.REQUEST_POTENTIAL_USERS:
+      return Object.assign({}, state, {
+        isloading: false
+      })
+
+    case types.RECEIVE_POTENTIAL_USERS_SUCCESS:
+      return Object.assign({}, state, {
+        ...action.users,
+        isloading: false
+      });
 
     default:
       return state;
@@ -26,10 +34,10 @@ export function ongoingCandidatesReducer(state=initialState.ongoing_brownbag_lis
   }
 }
 
-export function nextBrownbagReducer(state=initialState.brownbag_next_presenter, action) {
+export function nextBrownbagReducer(state=initialState.entities.brownbag.next_presenters, action) {
   switch (action.type) {
     case "BROWNBAG_NEXT_PRESENTER_SUCCESS":
-      return action.presenter;
+      return Object.assign({}, state, action.presenter);
 
     default:
     return state;

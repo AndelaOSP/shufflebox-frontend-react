@@ -90,15 +90,21 @@ export function getNextPresenter(presenter) {
 }
 
 export function fetchNextPresenter(presenter) {
+  const nextPresenters = new schema.Entity("presenters")
+  const nextPresentersSchema = [ nextPresenters ]
+
   return dispatch => {
     return fetch(`${fetchUrl}/api/brownbags/next/`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': process.env.TOKEN
+        'Authorization': 'JWT ' + process.env.TOKEN || token
       }
     })
     .then(response => response.json())
-    .then(response => dispatch(receiveNextPresenterSUccess(response)));
+    .then(response => {
+      const normalizedData = normalize(response, nextPresentersSchema)['entities'];
+      return dispatch(receiveNextPresenterSUccess(normalizedData['presenters']))
+    });
   };
 }
