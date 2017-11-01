@@ -10,11 +10,11 @@ class Login extends Component{
         this.state = {
             isLoggedIn: false,
             isInvalidToken: false
-        }
+        };
         
     }
 
-    componentDidMount() {
+    componentWillMount() {
         this.checkToken();
     }
 
