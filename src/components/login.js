@@ -49,11 +49,11 @@ class Login extends Component{
 
     render = () => {
         if (this.state.isLoggedIn){
-            return <Redirect to="/shuffle/brownbag" />
+            return <Redirect to="/shuffle/brownbag" />;
         }
 
         if (this.state.isInvalidToken){
-            return <Redirect to="/" />
+            return <Redirect to="/" />;
         }
         // return <div>Invalid login</div>
     }
