@@ -32,7 +32,7 @@ export function fetchPotentialCandidates(users) {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': 'JWT '+ process.env.TOKEN || token
+        'Authorization': 'JWT '+ process.env.TOKEN
       }
     })
     .then(response => response.json())
@@ -56,7 +56,7 @@ export function confirmBrownBag(brownBagObj){
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
-        'Authorization': process.env.TOKEN
+        'Authorization': 'JWT ' + process.env.TOKEN
       },
       credentials: 'include',
       body: JSON.stringify(brownBagObj)
@@ -75,7 +75,7 @@ export function cancelBrownBag(brownBagObj){
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
-        'Authorization': process.env.TOKEN
+        'Authorization': 'JWT' + process.env.TOKEN
       },
       credentials: 'include',
       body: JSON.stringify(brownBagObj)
@@ -111,7 +111,7 @@ export function fetchNextPresenter(presenter) {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': 'JWT ' + process.env.TOKEN || token
+        'Authorization': 'JWT ' + process.env.TOKEN
       }
     })
     .then(response => response.json())
