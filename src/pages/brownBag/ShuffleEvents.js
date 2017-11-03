@@ -32,7 +32,7 @@ class ShuffleEvents extends React.Component {
     .catch(function(error){
       throw error;
     });
-    }
+  }
 
   render() {
     return (
