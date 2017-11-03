@@ -1,4 +1,5 @@
 import fetch from 'isomorphic-fetch';
+import { normalize, schema } from 'normalizr';
 import * as actions from './actionTypes';
 import fetchUrl from '../../config';
 
@@ -25,7 +26,7 @@ export function getPotentialCandidates(user) {
 
 export function fetchPotentialCandidates(users) {
   const potentialCandidates = new schema.Entity("potential_presenters")
-  const potentialCandidatesSchema = [ nextPresenters ]
+  const potentialCandidatesSchema = [ potentialCandidates ]
 
   return dispatch => {
     return fetch(`${fetchUrl}/api/brownbags/not_presented/`, {
