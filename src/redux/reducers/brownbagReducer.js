@@ -19,7 +19,7 @@ export function ongoingCandidatesReducer(state=initialState.entities.brownbag.on
   switch (action.type) {
     case types.REQUEST_POTENTIAL_USERS:
       return Object.assign({}, state, {
-        isloading: false
+        isloading: true
       })
 
     case types.RECEIVE_POTENTIAL_USERS_SUCCESS:
