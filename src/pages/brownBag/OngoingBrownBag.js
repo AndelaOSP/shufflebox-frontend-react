@@ -47,7 +47,7 @@ class OngoingBrownBag extends React.Component {
 }
 
 OngoingBrownBag.propTypes = {
-  // users: PropTypes.object.isRequired,
+  users: PropTypes.array.isRequired,
   getPotentialCandidates: PropTypes.func.isRequired
 };
 

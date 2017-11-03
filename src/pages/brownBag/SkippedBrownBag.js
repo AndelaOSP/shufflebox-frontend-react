@@ -58,7 +58,7 @@ SkippedBrownBag.propTypes = {
 
 function mapStateToProps(state, ownProps){
   return {
-    skipped_brownbag_list: state.brownbag.skipped || skipped_brown_bag
+    skipped_brownbag_list: Object.assign([], state.brownbag.skipped) || skipped_brown_bag
   };
 }
 export default connect(mapStateToProps)(SkippedBrownBag);

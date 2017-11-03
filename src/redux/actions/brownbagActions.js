@@ -78,7 +78,7 @@ export function requestNextPresenters(presenter) {
   };
 }
 
-export function receiveNextPresenterSUccess(presenter) {
+export function receiveNextPresenterSuccess(presenter) {
   return {
     type: actions.BROWNBAG_NEXT_PRESENTER_SUCCESS,
     presenter
@@ -104,7 +104,7 @@ export function fetchNextPresenter(presenter) {
     .then(response => response.json())
     .then(response => {
       const normalizedData = normalize(response, nextPresentersSchema)['entities'];
-      return dispatch(receiveNextPresenterSUccess(normalizedData['presenters']))
+      return dispatch(receiveNextPresenterSuccess(normalizedData['presenters']))
     });
   };
 }
