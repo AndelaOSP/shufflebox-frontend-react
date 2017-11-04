@@ -8,6 +8,13 @@ export function brownbagReducer(state=initialState.entities.brownbag.next_presen
   }
 }
 
+export function skippedBrownBagReducer(state=initialState.entities.brownbag.skipped, action) {
+  switch (action.type) {
+    default:
+      return state;
+  }
+}
+
 export function previousCandidatesReducer(state=initialState.entities.brownbag.previous_presenters, action) {
   switch (action.type) {
     default:
