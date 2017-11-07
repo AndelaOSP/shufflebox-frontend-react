@@ -4,7 +4,7 @@ import * as actions from './actionTypes';
 import fetchUrl from '../../config';
 
 
-var brownbags = new schema.Entity('brownbags');
+const brownbags = new schema.Entity('brownbags');
 
 export function requestPotentialUsers(user) {
   return {
@@ -25,8 +25,8 @@ export function getPotentialCandidates(user) {
 }
 
 export function fetchPotentialCandidates(users) {
-  const potentialCandidates = new schema.Entity("potential_presenters")
-  const potentialCandidatesSchema = [ potentialCandidates ]
+  const potentialCandidates = new schema.Entity("potential_presenters");
+  const potentialCandidatesSchema = [ potentialCandidates ];
 
   return dispatch => {
     return fetch(`${fetchUrl}/api/brownbags/not_presented/`, {
@@ -42,7 +42,7 @@ export function fetchPotentialCandidates(users) {
       let normalizedData = normalize(response, potentialCandidatesSchema)['entities'];
       return dispatch(
         fetchPotentialCandidatesSuccess(normalizedData.potential_presenters)
-      )
+      );
 
     });
   };
@@ -104,8 +104,8 @@ export function getNextPresenter(presenter) {
 }
 
 export function fetchNextPresenter(presenter) {
-  const nextPresenters = new schema.Entity("presenters")
-  const nextPresentersSchema = [ nextPresenters ]
+  const nextPresenters = new schema.Entity("presenters");
+  const nextPresentersSchema = [ nextPresenters ];
 
   return dispatch => {
     return fetch(`${fetchUrl}/api/brownbags/next/`, {
@@ -118,7 +118,7 @@ export function fetchNextPresenter(presenter) {
     .then(response => response.json())
     .then(response => {
       let normalizedData = normalize(response, nextPresentersSchema)['entities'];
-      return dispatch(receiveNextPresenterSuccess(normalizedData['presenters']))
+      return dispatch(receiveNextPresenterSuccess(normalizedData['presenters']));
     });
   };
 }
