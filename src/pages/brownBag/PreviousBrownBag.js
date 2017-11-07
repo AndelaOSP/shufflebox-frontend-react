@@ -21,7 +21,7 @@ class PreviousBrownBag extends React.Component {
       }
     };
   }
-  
+
   handleClick = (user) => {
     this.props.showModal();
     this.setState({
@@ -92,8 +92,9 @@ PreviousBrownBag.propTypes = {
 
 function mapStateToProps(state, ownProps) {
   return {
-    previous_candidates_list: state.previousCandidatesReducer,
-    modal: state.modalReducer.modal
+    //  create and iterable array since state.brownbag.previous is an Object
+    previous_candidates_list: Object.assign([], state.brownbag.previous),
+    modal: state.modal
   };
 }
 

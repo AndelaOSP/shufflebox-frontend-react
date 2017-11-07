@@ -5,19 +5,6 @@ import UUID from 'node-uuid';
 
 const styles = require('./SkippedBrownBag.scss');
 
-// dummy data
-const  skipped_brown_bag = [
-  {
-    "id": 19,
-    "username": "Test Andela",
-    "email": "test-user9@andela.com",
-    "profile": {
-      "avatar": "https://motherboard-images.vice.com//content-images/contentimage/41599/1485499779158756.jpg",
-      "birth_date": null,
-      "bio": ""
-    }
-  }
-];
 class SkippedBrownBag extends React.Component {
   constructor(props){
     super(props);
@@ -58,7 +45,7 @@ SkippedBrownBag.propTypes = {
 
 function mapStateToProps(state, ownProps){
   return {
-    skipped_brownbag_list: state.skippedCandidatesReducer || skipped_brown_bag
+    skipped_brownbag_list: Object.assign([], state.brownbag.skipped)
   };
 }
 export default connect(mapStateToProps)(SkippedBrownBag);

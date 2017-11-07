@@ -1,36 +1,50 @@
 import fetch from 'isomorphic-fetch';
+import { normalize, schema } from 'normalizr';
 import * as actions from './actionTypes';
 import fetchUrl from '../../config';
 
-export function requestUnpresentedUsers(user) {
+
+const brownbags = new schema.Entity('brownbags');
+
+export function requestPotentialUsers(user) {
   return {
-    type: actions.REQUEST_UNPRESENTED_USERS,
+    type: actions.REQUEST_POTENTIAL_USERS,
     user
   };
 }
 
-export function receiveUnprensentedUsersSuccess(user) {
+export function fetchPotentialCandidatesSuccess(users) {
   return {
-    type: actions.RECEIVE_UNPRESENTED_USERS_SUCCESS,
-    user
+    type: actions.RECEIVE_POTENTIAL_USERS_SUCCESS,
+    users
   };
 }
 
-export function getUnpresentedUsers(user) {
-  return fetchUnpresentedUsers(user);
+export function getPotentialCandidates(user) {
+  return fetchPotentialCandidates(user);
 }
 
-export function fetchUnpresentedUsers(users) {
+export function fetchPotentialCandidates(users) {
+  const potentialCandidates = new schema.Entity("potential_presenters");
+  const potentialCandidatesSchema = [ potentialCandidates ];
+
   return dispatch => {
     return fetch(`${fetchUrl}/api/brownbags/not_presented/`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': process.env.TOKEN
+        'Authorization': 'JWT '+ process.env.TOKEN
       }
     })
     .then(response => response.json())
-    .then(response => dispatch(receiveUnprensentedUsersSuccess(response)));
+    .then(response => {
+      // normalize json data from the API response
+      let normalizedData = normalize(response, potentialCandidatesSchema)['entities'];
+      return dispatch(
+        fetchPotentialCandidatesSuccess(normalizedData.potential_presenters)
+      );
+
+    });
   };
 }
 
@@ -43,7 +57,7 @@ export function confirmBrownBag(brownBagObj){
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
-        'Authorization': process.env.TOKEN
+        'Authorization': 'JWT ' + process.env.TOKEN
       },
       credentials: 'include',
       body: JSON.stringify(brownBagObj)
@@ -62,7 +76,7 @@ export function cancelBrownBag(brownBagObj){
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
-        'Authorization': process.env.TOKEN
+        'Authorization': 'JWT' + process.env.TOKEN
       },
       credentials: 'include',
       body: JSON.stringify(brownBagObj)
@@ -78,7 +92,7 @@ export function requestNextPresenters(presenter) {
   };
 }
 
-export function receiveNextPresenterSUccess(presenter) {
+export function receiveNextPresenterSuccess(presenter) {
   return {
     type: actions.BROWNBAG_NEXT_PRESENTER_SUCCESS,
     presenter
@@ -90,15 +104,21 @@ export function getNextPresenter(presenter) {
 }
 
 export function fetchNextPresenter(presenter) {
+  const nextPresenters = new schema.Entity("presenters");
+  const nextPresentersSchema = [ nextPresenters ];
+
   return dispatch => {
     return fetch(`${fetchUrl}/api/brownbags/next/`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': process.env.TOKEN
+        'Authorization': 'JWT ' + process.env.TOKEN
       }
     })
     .then(response => response.json())
-    .then(response => dispatch(receiveNextPresenterSUccess(response)));
+    .then(response => {
+      let normalizedData = normalize(response, nextPresentersSchema)['entities'];
+      return dispatch(receiveNextPresenterSuccess(normalizedData['presenters']));
+    });
   };
 }

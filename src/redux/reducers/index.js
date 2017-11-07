@@ -3,18 +3,20 @@ import {
   brownbagReducer,
   previousCandidatesReducer,
   nextBrownbagReducer,
-  ongoingCandidatesReducer
+  ongoingCandidatesReducer,
+  skippedBrownBagReducer
 } from './brownbagReducer';
-import {
-  modalReducer
-} from './modalReducer';
+import {modalReducer} from './modalReducer';
 
 const rootReducer = combineReducers({
-  brownbagReducer,
-  previousCandidatesReducer,
-  nextBrownbagReducer,
-  ongoingCandidatesReducer,
-  modalReducer
+  brownbag: combineReducers({
+    previous: previousCandidatesReducer,
+    next: nextBrownbagReducer,
+    ongoing: ongoingCandidatesReducer,
+    skipped: skippedBrownBagReducer
+  }),
+  modal: modalReducer,
+  secretSanta: {}
 });
 
 export default rootReducer;

@@ -46,10 +46,10 @@ class UpcomingBrownBag extends React.Component {
               </div>
               <Button className={styles.confirmButton} bsStyle="primary" onClick={() => this.handleConfirmBrownbag({id: presenter.id, date: presenter.date, status:''})}>
                 Confirm
-              </Button>          
+              </Button>
               <Button bsStyle="danger" className={styles.cancelButton} onClick={() => this.handleCancelBrownbag({id: presenter.id, date: presenter.date, status:''})}>
                 Cancel
-              </Button>   
+              </Button>
             </li>
           )
           );
@@ -59,9 +59,9 @@ class UpcomingBrownBag extends React.Component {
           <span>Loading .....</span>
           <Spinner name="ball-clip-rotate-multiple"  color="blue" />
         </div>
-        
+
       );
-    } 
+    }
   }
 
   render(){
@@ -86,7 +86,7 @@ UpcomingBrownBag.propTypes = {
 
 function mapStateToProps(state, ownProps) {
   return {
-    presenters: state.nextBrownbagReducer
+    presenters: Object.assign([], state.brownbag.next)
   };
 }
 

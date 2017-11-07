@@ -21,7 +21,7 @@ class BrownBagContainer extends React.Component {
           <OngoingBrownBag />
           <VisitorBrownBag />
         </div>
-      </div> 
+      </div>
     );
   }
 }
@@ -30,10 +30,4 @@ BrownBagContainer.propTypes = {
   brownbag: PropTypes.array
 };
 
-function mapStateToProps(state, ownProps) {
-  return {
-    brownbag: state.brownbagReducer
-  };
-}
-
-export default connect(mapStateToProps)(BrownBagContainer);
+export default BrownBagContainer;

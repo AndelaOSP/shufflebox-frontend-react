@@ -10,14 +10,14 @@ class OngoingBrownBag extends React.Component {
   constructor(props) {
     super(props);
 
-    this.unpresentedUsers = this.unpresentedUsers.bind(this);
+    this.potentialCandidates = this.potentialCandidates.bind(this);
   }
 
   componentDidMount() {
-    this.props.getUnpresentedUsers();
+    this.props.getPotentialCandidates();
   }
 
-  unpresentedUsers() {
+  potentialCandidates() {
     let truncatedUsers = this.props.users;
     truncatedUsers.shift();
     truncatedUsers.length = 6;  //hack to get the first 6 users
@@ -39,7 +39,7 @@ class OngoingBrownBag extends React.Component {
       <div className={styles.onlistBrownBag}>
         <span>WHO'S ON THE LIST</span>
         <ul className={styles.onList}>
-          {this.props.users.length > 0 && this.unpresentedUsers()}
+          {this.props.users.length > 0 && this.potentialCandidates()}
         </ul>
       </div>
     );
@@ -48,19 +48,19 @@ class OngoingBrownBag extends React.Component {
 
 OngoingBrownBag.propTypes = {
   users: PropTypes.array.isRequired,
-  getUnpresentedUsers: PropTypes.func.isRequired
+  getPotentialCandidates: PropTypes.func.isRequired
 };
 
 function mapStateToProps(state, ownProps) {
   return {
-    users: state.ongoingCandidatesReducer
+    users: Object.assign([], state.brownbag.ongoing)
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    getUnpresentedUsers: (user) => {
-      dispatch(brownbagActions.getUnpresentedUsers(user));
+    getPotentialCandidates: (user) => {
+      dispatch(brownbagActions.getPotentialCandidates(user));
     }
   };
 }

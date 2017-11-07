@@ -32,7 +32,7 @@ class ShuffleEvents extends React.Component {
     .catch(function(error){
       throw error;
     });
-    }
+  }
 
   render() {
     return (
@@ -40,7 +40,7 @@ class ShuffleEvents extends React.Component {
         <h5>27 Jan - 20 Mar</h5>
         <h4>Next brown bag is almost up...</h4>
         <Button className={styles.shuffleButton} onClick={this.shuffle} >
-        <img src="https://www.dropbox.com/s/okgmtdpih1xxau3/Shuffle.png?raw=1"/>SHUFFLE
+          <img src="https://www.dropbox.com/s/okgmtdpih1xxau3/Shuffle.png?raw=1"/>SHUFFLE
         </Button>
       </div>
     );
