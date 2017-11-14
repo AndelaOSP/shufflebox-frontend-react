@@ -2,7 +2,8 @@ import 'babel-polyfill';
 import React from 'react';
 import { render } from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
-import Routes from './routes';
+import App from './App';
+// import Routes from './routes';
 // import './styles/styles.css';
 import './styles/main.scss';
 
@@ -14,9 +15,7 @@ import configureStore from './redux/store/configureStore';
 const store = configureStore({});
 render(
   <Provider store = {store}>
-    <BrowserRouter>
-      <Routes />
-    </BrowserRouter>
+    <App />
   </Provider>,
   document.getElementById('root')
 );
