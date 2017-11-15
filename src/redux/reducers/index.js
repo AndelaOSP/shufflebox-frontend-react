@@ -1,4 +1,4 @@
-import {combineReducers} from 'redux';
+import { combineReducers } from 'redux';
 import {
   brownbagReducer,
   previousCandidatesReducer,
@@ -6,7 +6,9 @@ import {
   ongoingCandidatesReducer,
   skippedBrownBagReducer
 } from './brownbagReducer';
-import {modalReducer} from './modalReducer';
+import { modalReducer } from './modalReducer';
+import apiCallReducer from './apiCallReducer';
+import userReducer from './userReducer';
 
 const rootReducer = combineReducers({
   brownbag: combineReducers({
@@ -15,6 +17,8 @@ const rootReducer = combineReducers({
     ongoing: ongoingCandidatesReducer,
     skipped: skippedBrownBagReducer
   }),
+  apiCallState: apiCallReducer,
+  user: userReducer,
   modal: modalReducer,
   secretSanta: {}
 });

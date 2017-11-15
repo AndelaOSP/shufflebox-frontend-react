@@ -10,7 +10,7 @@ class Content extends React.Component {
   }
 
   goToHomePage = () => {
-    this.props.history.push('/shuffle/brownbag');
+    window.location = `https://api.andela.com/login?redirect_url=${window.location.origin}/login`;
   }
 
   render(){

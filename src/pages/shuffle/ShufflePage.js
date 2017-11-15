@@ -29,7 +29,7 @@ class ShufflePage extends React.Component {
     const hangoutsTab = this.state.tab === 'hangouts';
     return (
       <div className={styles.shuffleContainer}>
-        <SidePanel />
+        <SidePanel/>
         <div className={styles.tabsContainer}>
           <NavTabs>
             <LinkContainer to={'/shuffle/brownbag'}>

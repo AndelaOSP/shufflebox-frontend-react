@@ -1,4 +1,7 @@
 import React from 'react';
+import { getUser } from '../../../redux/reducers/userReducer';
+import { connect } from 'react-redux';
+
 const styles = require('./CurrentUser.scss');
 
 class CurrentUser extends React.Component {
@@ -7,11 +10,12 @@ class CurrentUser extends React.Component {
   }
 
   render(){
+    const { user } = this.props;
     return (
       <div className={styles.user}>
         <img
           className={styles.userAvatar}
-          src="https://motherboard-images.vice.com//content-images/contentimage/41599/1485499779158756.jpg"
+          src={user.userInfo.picture}
           alt="user image not found"/>
         <span>What is your next event?</span>
       </div>
@@ -19,4 +23,10 @@ class CurrentUser extends React.Component {
   }
 }
 
-export default CurrentUser;
+function mapStateToProps(state, ownProps) {
+  const user = getUser(state);
+  return {
+    user
+  };
+}
+export default connect(mapStateToProps)(CurrentUser);
