@@ -39,13 +39,13 @@ export default function logIn() {
       const { UserInfo } = jwt_decode(token);
 
       if (UserInfo.email.match('@andela.com')) {
-        localStorage.setItem('token', token);
-        dispatch(logInRequestSuccess(UserInfo))
+        // localStorage.setItem('token', token);
+        dispatch(logInRequestSuccess(UserInfo));
       } else {
         dispatch(logInRequestFail('Invalid email'));
       }
     } catch (err) {
       dispatch(logInRequestFail(err));
     }
-  }
+  };
 }

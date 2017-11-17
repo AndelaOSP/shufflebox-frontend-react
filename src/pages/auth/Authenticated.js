@@ -9,7 +9,10 @@ const Authenticated = ({ apiCallState, user, component, ...rest }) => (
       return user.loggedIn ? (
         React.createElement(component, { ...props, apiCallState, user })
       ) : (
-        <Redirect to="/" />
+        <Redirect to={{
+          pathname: '/login',
+          state: { from: props.location }
+        }} />
       );
     }}
   />
