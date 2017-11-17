@@ -16,11 +16,7 @@ const App = appProps => (
       <Public path="/login" component={Login} {...appProps} />
       <Public path="/about" component={HomePage} {...appProps} />
       <Public path="/faq" component={HomePage} {...appProps} />
-      <Authenticated
-        path="/shuffle/brownbag"
-        component={shufflePage}
-        {...appProps}
-      />
+      <Authenticated path="/shuffle" component={shufflePage} {...appProps} />
     </Switch>
   </BrowserRouter>
 );
