@@ -44,7 +44,7 @@
     width: 39%;
     right: 1%;
     height: 50rem;
-  } 
+  }
 }
 
 .button {
@@ -52,14 +52,13 @@
   top: 62%;
   background-color: $blue;
   position: absolute;
-  border-radius: 3rem;
-  font-weight: 600;
+  border-radius: 10rem;
   font-size: 1.5rem;
-  padding: 1.5rem;
-  width: 21rem;
-  
+  padding: 1rem;
+  width: 22rem;
+
   &:active,
   &:focus {
-    outline: none;
+    outline: 0 !important;
   }
 }

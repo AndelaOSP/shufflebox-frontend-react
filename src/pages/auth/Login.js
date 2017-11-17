@@ -3,7 +3,6 @@ import { Redirect } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import jwt_decode from 'jwt-decode';
 import logIn from '../../redux/actions/loginActions';
 import { getUser } from '../../redux/reducers/userReducer';
 import { Alert } from 'react-bootstrap';
@@ -18,7 +17,7 @@ class Login extends Component {
   }
 
   componentWillMount() {
-      this.props.logIn();
+    this.props.logIn();
   }
 
   render = () => {
@@ -27,28 +26,32 @@ class Login extends Component {
       return <Redirect to="/shuffle/brownbag" />;
     }
 
-    if (user.validationErrors === 'Invalid email' ) {
+    if (user.validationErrors === 'Invalid email') {
       <Alert bsStyle="warning">
-        <strong>Ooops Invalid email</strong>{user.userInfo.email}
+        <strong>Ooops Invalid email</strong>
+        {user.userInfo.email}
       </Alert>;
       return <Redirect to="/" />;
     } else {
-        return <div />;
+      return <div />;
     }
   };
 }
 
-function mapStateToProps(state, ownProps) {
-    const user = getUser(state);
-    return {
-      user
-    };
-  }
+function mapStateToProps(state) {
+  const user = getUser(state);
+  return {
+    user
+  };
+}
 
 function mapDispatchToProps(dispatch) {
-    return bindActionCreators({
-        logIn
-    }, dispatch);
+  return bindActionCreators(
+    {
+      logIn
+    },
+    dispatch,
+  );
 }
 
 Login.propTypes = {
@@ -62,8 +65,8 @@ Login.propTypes = {
       picture: PropTypes.string,
       roles: PropTypes.any
     }).isRequired,
-  loggedIn: PropTypes.bool.isRequired,
-  validationErrors: PropTypes.bool.isRequired
+    loggedIn: PropTypes.bool.isRequired,
+    validationErrors: PropTypes.bool.isRequired
   })
 };
 

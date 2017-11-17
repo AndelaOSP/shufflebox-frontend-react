@@ -1,21 +1,22 @@
 import 'babel-polyfill';
 import React from 'react';
 import { render } from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
 import App from './App';
-// import Routes from './routes';
 // import './styles/styles.css';
 import './styles/main.scss';
+import { PersistGate } from 'redux-persist/es/integration/react';
 
 // Import Provider from redux and configure store
-import {Provider} from 'react-redux';
+import { Provider } from 'react-redux';
 import configureStore from './redux/store/configureStore';
 
 // Set initialState as {} for now
-const store = configureStore({});
+const { persistor, store } = configureStore({});
 render(
-  <Provider store = {store}>
-    <App />
+  <Provider store={store}>
+    <PersistGate persistor={persistor}>
+      <App />
+    </PersistGate>
   </Provider>,
-  document.getElementById('root')
+  document.getElementById('root'),
 );

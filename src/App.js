@@ -13,21 +13,15 @@ const App = appProps => (
   <BrowserRouter>
     <Switch>
       <Route exact path="/" component={HomePage} />
-      <Route exact path="/login" component={Login} />
-      <Route Public path="/about" component={HomePage} {...appProps} />
-      <Route Public path="/faq" component={HomePage} {...appProps} />
-      <Route
-        Authenticated
-        exact
-        path="/shuffle/brownbag"
-        component={shufflePage}
-        {...appProps}
-      />
+      <Public path="/login" component={Login} {...appProps} />
+      <Public path="/about" component={HomePage} {...appProps} />
+      <Public path="/faq" component={HomePage} {...appProps} />
+      <Authenticated path="/shuffle" component={shufflePage} {...appProps} />
     </Switch>
   </BrowserRouter>
 );
 
-function mapStateToProps(state, ownProps) {
+function mapStateToProps(state) {
   const user = getUser(state);
   const apiCallState = getApiCallState(state);
   return {
