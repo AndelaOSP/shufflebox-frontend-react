@@ -27,7 +27,14 @@ class Content extends React.Component {
             Andelans for hangouts, brown bag and secret santa.
           </p>
           <Button className={styles.button} onClick={this.goToHomePage}>
-            SIGN IN TO GET STARTED
+            <i
+              className="fa fa-google"
+              style={{
+                color: '#fff',
+                fontSize: '2rem',
+                paddingRight: '0.5rem'
+              }}
+            />LOGIN WITH GOOGLE
           </Button>
         </div>
         <div className={styles.illustration}>
