@@ -1,16 +1,22 @@
 import { combineReducers } from 'redux';
 import {
-  brownbagReducer,
   previousCandidatesReducer,
   nextBrownbagReducer,
   ongoingCandidatesReducer,
   skippedBrownBagReducer
 } from './brownbagReducer';
+import { persistCombineReducers } from 'redux-persist';
+import storage from 'redux-persist/es/storage';
 import { modalReducer } from './modalReducer';
 import apiCallReducer from './apiCallReducer';
 import userReducer from './userReducer';
 
-const rootReducer = combineReducers({
+const config = {
+  key: 'root',
+  storage
+};
+
+const rootReducer = persistCombineReducers(config, {
   brownbag: combineReducers({
     previous: previousCandidatesReducer,
     next: nextBrownbagReducer,
