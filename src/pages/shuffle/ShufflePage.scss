@@ -18,19 +18,17 @@
   background: #fff;
 }
 
-.ellipsis {
-  color: $dark-gray;
+.rightNav {
   position: absolute;
   right: 5rem;
+}
+.rightNavButton {
+  color: $blue;
   background-color: $light-gray;
-  padding: 1rem;
   border: none;
-  >span {
-    font-size: x-large;
-  }
 }
 
-.tabsContainer{
+.tabsContainer {
   overflow: scroll;
 }
 

@@ -29,6 +29,12 @@ export default function reducer(
         ...state,
         validationErrors: action.payload
       };
+    case actions.LOG_OUT_REQUEST_SUCCESS:
+      return {
+        ...state,
+        userInfo: {},
+        loggedIn: false
+      };
     default:
       return state;
   }
