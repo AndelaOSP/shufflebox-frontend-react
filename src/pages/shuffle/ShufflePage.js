@@ -9,6 +9,7 @@ import { Redirect } from 'react-router-dom';
 import { getUser } from '../../redux/reducers/userReducer';
 import logOut from '../../redux/actions/logOutActions';
 import { connect } from 'react-redux';
+import SecretSanta from '../secretSanta/secretSanta';
 
 const styles = require('./ShufflePage.scss');
 
@@ -70,10 +71,10 @@ class ShufflePage extends React.Component {
             <div className={brownBagTab ? styles.brownBag : styles.hide}>
               <BrownBagContainer />
             </div>
-
             <div className={secretSantaTab ? styles.secretSanta : styles.hide}>
               <h1>Secret Santa</h1>
-            </div>
+            <SecretSanta />
+          </div>
 
             <div className={hangoutsTab ? styles.hangouts : styles.hide}>
               <h1>Hangouts</h1>
