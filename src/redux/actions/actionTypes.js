@@ -39,3 +39,7 @@ export const LOGIN_REQUEST_FAIL = 'LOGIN_REQUEST_FAIL';
 
 //log out
 export const LOG_OUT_REQUEST_SUCCESS = 'LOG_OUT_REQUEST_SUCCESS';
+
+// santas
+export const REQUEST_SANTAS = "REQUEST_SANTAS";
+export const REQUEST_SANTA = "REQUEST_SANTA";

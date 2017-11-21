@@ -10,6 +10,7 @@ import storage from 'redux-persist/es/storage';
 import { modalReducer } from './modalReducer';
 import apiCallReducer from './apiCallReducer';
 import userReducer from './userReducer';
+import {secretSantaReducer} from './secretSantaReducer';
 
 const config = {
   key: 'root',
@@ -26,7 +27,7 @@ const rootReducer = persistCombineReducers(config, {
   apiCallState: apiCallReducer,
   user: userReducer,
   modal: modalReducer,
-  secretSanta: {}
+  secretSanta: secretSantaReducer
 });
 
 export default rootReducer;

@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as brownbagActions from '../../redux/actions/brownbagActions';
@@ -20,18 +20,22 @@ class OngoingBrownBag extends React.Component {
   potentialCandidates() {
     let truncatedUsers = this.props.users;
     truncatedUsers.shift();
-    truncatedUsers.length = 6;  //hack to get the first 6 users
-    return (
-      truncatedUsers.map((user, index) =>
-      <li key = {index}>
+    truncatedUsers.length = 6; //hack to get the first 6 users
+    return truncatedUsers.map((user, index) => (
+      <li key={index}>
         <img
           className="avatar"
-          src={user.profile.avatar || 'https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg?sz=50'}
-          alt="user image not found"/>
-        <span className={styles.userInfo}>{`${user.first_name} ${user.last_name}`}</span>
+          src={
+            user.profile.avatar ||
+            'https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg?sz=50'
+          }
+          alt="user image not found"
+        />
+        <span
+          className={styles.userInfo}
+        >{`${user.first_name} ${user.last_name}`}</span>
       </li>
-      )
-    );
+    ));
   }
 
   render() {
@@ -59,7 +63,7 @@ function mapStateToProps(state, ownProps) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    getPotentialCandidates: (user) => {
+    getPotentialCandidates: user => {
       dispatch(brownbagActions.getPotentialCandidates(user));
     }
   };

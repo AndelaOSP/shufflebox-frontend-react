@@ -9,6 +9,7 @@ import { Redirect } from 'react-router-dom';
 import { getUser } from '../../redux/reducers/userReducer';
 import logOut from '../../redux/actions/logOutActions';
 import { connect } from 'react-redux';
+import SecretSanta from '../secretSanta/secretSanta';
 
 const styles = require('./ShufflePage.scss');
 
@@ -22,10 +23,22 @@ class ShufflePage extends React.Component {
     };
   }
 
-  componentWillReceiveProps(nextProps) {
-    const groups = /\/(\w+)$/g.exec(nextProps.location.pathname); // get current tab
-    this.setState({ tab: groups[1] });
+  componentWillMount() {
+    if (this.props.location.pathname !== '/shuffle') {
+      const tab = this.getTab(this.props); // get current tab
+      this.setState({ tab });
+    }
   }
+
+  componentWillReceiveProps(nextProps) {
+    const tab = this.getTab(nextProps);
+    this.setState({ tab });
+  }
+
+  getTab = props => {
+    const groups = /\/(\w+)$/g.exec(props.location.pathname);
+    return groups[1];
+  };
 
   logOut = () => {
     this.props.logOut();
@@ -70,9 +83,8 @@ class ShufflePage extends React.Component {
             <div className={brownBagTab ? styles.brownBag : styles.hide}>
               <BrownBagContainer />
             </div>
-
             <div className={secretSantaTab ? styles.secretSanta : styles.hide}>
-              <h1>Secret Santa</h1>
+              <SecretSanta />
             </div>
 
             <div className={hangoutsTab ? styles.hangouts : styles.hide}>
