@@ -6,7 +6,7 @@ dotenv.config();
 
 module.exports =  {
   entry: [
-    path.resolve(__dirname, 'src/index')
+    path.resolve(__dirname, 'src/index.js')
   ],
   target: 'web',
   output: {
@@ -14,17 +14,16 @@ module.exports =  {
     publicPath: '/',
     filename: 'bundle.js'
   },
-  plugins: [
-    new webpack.DefinePlugin({
-      'process.env': {
-        'NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
-        'TOKEN': JSON.stringify(process.env.TOKEN)
-      }
-    })
-  ],
   module: {
     rules: [{
         test: /\.js$/,
+        use: [{
+          loader: 'babel-loader'
+        }],
+        exclude: /node_modules/
+      },
+      {
+        test: /\.jsx$/,
         use: [{
           loader: 'babel-loader'
         }],
