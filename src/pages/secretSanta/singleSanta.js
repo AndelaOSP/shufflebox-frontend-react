@@ -27,16 +27,17 @@ class SingleSanta extends React.Component {
 
   render() {
     const { secretSanta } = this.props;
-    const giftee = secretSanta[0].giftee;
+    const giftee = secretSanta.giftee;
+    
     return (
       <div className={styles.singleSantaView}>
         <h1 className={styles.greeting}>{this.renderGlitters()}</h1>
         <div className={styles.container}>
           <p className={styles.gitfteeName}>
             {`You are gifting
-            ${giftee.first_name} ${giftee.last_name}`}
+            ${giftee.name}`}
           </p>
-          <img className={styles.gifteeImage} src={giftee.profile.avatar} />
+          <img className={styles.gifteeImage} src={giftee.avatar} />
         </div>
 
         {/* <div className={styles.snow} /> */}
