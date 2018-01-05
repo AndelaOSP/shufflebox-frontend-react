@@ -35,7 +35,7 @@ export function fetchSantas() {
 
 export function fetchSanta(user){
     return dispatch => {
-        return fetch(`${fetchUrl}/api/santas/`, {
+        return fetch(`${fetchUrl}/api/giftee/`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -44,8 +44,7 @@ export function fetchSanta(user){
         })
         .then(response => response.json())
         .then(data => {
-            const santaPair = data.filter(pair => pair.santa.username == user.userInfo.email);
-            return santaPair;
+            return data;
 
         })
         .then(santa => dispatch(requestSanta(santa)));
